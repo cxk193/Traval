@@ -12,7 +12,10 @@
 </template>
 <script>
     export default {
-        name:'City'
+        name:'City',
+        props:{
+            hotCity:Object
+        }
     }
 </script>
 <style lang="less" scoped>

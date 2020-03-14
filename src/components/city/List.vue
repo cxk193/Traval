@@ -15,25 +15,21 @@
                 <div class="title border-topbottom">热门城市</div>
                 <div class="bottom-list">
 
-                    <div class="bottom-wrapper">
-                        <div class="bottom">北京</div>
-                    </div>
-                    <div class="bottom-wrapper">
-                        <div class="bottom">北京</div>
-                    </div>
-                    <div class="bottom-wrapper">
-                        <div class="bottom">北京</div>
-                    </div>
-                    <div class="bottom-wrapper">
-                        <div class="bottom">北京</div>
+                    <div class="bottom-wrapper" v-for="item of hotCity" :key="item.id">
+                        <div class="bottom">{{item.name}}</div>
                     </div>
                 </div>
             </div>
 
-            <div class="area" v-for="(item,index) in list" :key="item.id" :ref="item.id">
-                <div class="title border-topbottom">{{item.id}}</div>
+            <div class="area" v-for="(item,key) in cities" :key="key" :ref="key">
+                <div class="title border-topbottom">{{key}}</div>
                 <div class="item-list">
-                    <div class="item border-bottom">{{item.address}}</div>
+                    <div class="item border-bottom"
+                        v-for="innerItem of item"
+                         :key="item.id"
+                    >
+                        {{innerItem.name}}
+                    </div>
                 </div>
             </div>
         </div>
@@ -44,40 +40,10 @@
     import Bscroll from 'better-scroll'
     export default {
         name:'CityList',
-        data(){
-            return {
-                list:[
-                    {id:'A',address:'阿拉尔'},
-                    {id:'B',address:'阿拉尔'},
-                    {id:'C',address:'阿拉尔'},
-                    {id:'D',address:'阿拉尔'},
-                    {id:'E',address:'阿拉尔'},
-                    {id:'F',address:'阿拉尔'},
-                    {id:'G',address:'阿拉尔'},
-                    {id:'H',address:'阿拉尔'},
-                    {id:'I',address:'阿拉尔'},
-                    {id:'J',address:'阿拉尔'},
-                    {id:'K',address:'阿拉尔'},
-                    {id:'L',address:'阿拉尔'},
-                    {id:'M',address:'阿拉尔'},
-                    {id:'N',address:'阿拉尔'},
-                    {id:'O',address:'阿拉尔'},
-                    {id:'P',address:'阿拉尔'},
-                    {id:'Q',address:'阿拉尔'},
-                    {id:'R',address:'阿拉尔'},
-                    {id:'S',address:'阿拉尔'},
-                    {id:'T',address:'阿拉尔'},
-                    {id:'U',address:'阿拉尔'},
-                    {id:'V',address:'阿拉尔'},
-                    {id:'W',address:'阿拉尔'},
-                    {id:'X',address:'阿拉尔'},
-                    {id:'Y',address:'阿拉尔'},
-                    {id:'Z',address:'阿拉尔'}
-                ]
-            }
-        },
         props:{
-          letter:String
+            letter:String,
+            hotCity:Array,
+            cities:Object
         },
         mounted() {
             //将需要滚动区域的dom元素传入到实例对象当中
@@ -91,6 +57,7 @@
                 }
             }
         }
+
     }
 </script>
 <style lang="less" scoped>

@@ -63,7 +63,7 @@
            }
            .tit-right{
                float: right;
-               font-size: .4rem;
+               font-size: .24rem;
                color: #757575;
                padding-right: .3rem;
            }
@@ -95,20 +95,15 @@
             box-sizing: border-box;
             width: 100%;
             height: auto;
-            overflow: hidden;
             margin: 0 .1rem;
-
-
             .pic{
                 float: left;
                 width: 45%;
                 margin: .2rem 0 0 .2rem;
-                border-radius: .1rem;
-                overflow: hidden;
-
                 img{
                     width: 100%;
                     height: auto;
+                    border-radius: .1rem;
                 }
             }
         }

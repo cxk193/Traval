@@ -1,27 +1,36 @@
 <template>
   <div id="app">
-    <router-link to="/home">home</router-link>
-
-    <router-link to="/list">list</router-link>
     <router-view></router-view>
+    <MainTabBar v-if="flag"></MainTabBar>
+    <BackTop></BackTop>
   </div>
 </template>
 
 <script>
+  import Home from 'components/home/Home'
+  import MainTabBar from 'components/tabar/MainTabBar'
+  import BackTop from 'components/backTop/BackTop'
 
   export default {
     name:'app',
-    components:{
-
-    },
     data(){
       return {
-        cont:'app组件',
-        num:0
+        flag:true
+      }
+    },
+    components:{
+      Home,
+      MainTabBar,
+      BackTop
+    },
+    watch:{
+      '$route'(newVal,oldval){
+          if(newVal.path === '/city'){
+            this.flag = false
+          }else {
+            this.flag = true
+          }
       }
     }
   }
 </script>
-<style lang="less">
-
-</style>

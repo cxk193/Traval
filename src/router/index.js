@@ -2,7 +2,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 const Home = () =>import('../components/home/Home');
-const List = () =>import('../components/home/List');
+const Piao = () =>import('../views/piao/piao')
+const GoTop = () =>import('../views/goTop/GoTop')
+const Profile = () =>import('../views/profile/profile')
+const City = () =>import('../components/city/City');
 
 Vue.use(VueRouter)
 
@@ -12,9 +15,26 @@ const routes = [
     component:Home
   },
   {
-    path:'/list',
-    component:List
+    path:'/piao',
+    component:Piao
+  },
+  {
+    path:'/gotop',
+    component:GoTop
+  },
+  {
+    path:'/profile',
+    component:Profile
+  },
+  {
+    path:'/city',
+    component:City
+  },
+  {
+    path:'*',
+    redirect:'/home'
   }
+
 ]
 
 const router = new VueRouter({

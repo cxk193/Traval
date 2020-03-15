@@ -17,7 +17,7 @@
                          :key="item.id"
 
                     >
-                        <div class="bottom" >{{item.name}}</div>
+                        <div class="bottom" @click="handelCity(item.name)">{{item.name}}</div>
                     </div>
                 </div>
             </div>
@@ -49,6 +49,7 @@
         methods:{
           handelCity(address){
               console.log(address)
+              this.$store.dispatch('handelCity',address)
           }
         },
         mounted() {

@@ -50,8 +50,6 @@
             getMessage(){
                 this.cities = Data.data.cities
                 this.hotCities = Data.data.hotCities
-
-                console.log()
             }
         },
         mounted() {

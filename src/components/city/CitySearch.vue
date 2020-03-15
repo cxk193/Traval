@@ -1,9 +1,9 @@
 <template>
     <div class="city-search">
-       <input type="text" v-model="keywords" class="search-input" placeholder="输入其他城市拼音" />
+        <input type="text" v-model="keyword" class="search-input" placeholder="输入其他城市拼音" />
         <div class="serch-content"
              ref="search"
-             v-show="keywords"
+             v-show="keyword"
         >
             <ul  >
                 <li class="search-item" v-for="item of list">
@@ -21,7 +21,7 @@
         name:'citySearch',
         data(){
             return {
-                keywords:'',
+                keyword:'',
                 list:[],
                 timer:null
             }
@@ -34,31 +34,26 @@
                 return !this.list.length
             }
         },
-        watch:{
-            //搜索功能
-            keywords(){
-                if(this.timer){
+        watch: {
+            keyword () {
+                if (this.timer) {
                     clearTimeout(this.timer)
-                }else{
-                //搜索项没有的时候直接返回一个空数组
-                if(!this.keywords){
-                     this.list = []
-                     return
                 }
-                this.timer = setTimeout(()=> {
-                        const result = []
-                        for(let i in this.cities){
-                            this.cities[i].forEach(value=>{
-                                if(value.spell.indexOf(this.keywords) > -1 || value.name.indexOf(this.keywords) > -1){
-                                    result.push(value)
-                                }
-                            })
-                        }
-                        this.list = result
-
-                    },100)
-
+                if (!this.keyword) {
+                    this.list = []
+                    return
                 }
+                this.timer = setTimeout(() => {
+                    const result = []
+                    for (let i in this.cities) {
+                        this.cities[i].forEach((value) => {
+                            if (value.spell.indexOf(this.keyword) > -1 || value.name.indexOf(this.keyword) > -1) {
+                                result.push(value)
+                            }
+                        })
+                    }
+                    this.list = result
+                }, 100)
             }
         },
         mounted() {

@@ -55,8 +55,9 @@
                             })
                         }
                         this.list = result
+
                     },100)
-                    console.log(this.list)
+
                 }
             }
         },

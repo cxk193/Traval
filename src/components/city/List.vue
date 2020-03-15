@@ -4,19 +4,20 @@
             <div class="area">
                 <div class="title border-topbottom">当前城市</div>
                 <div class="bottom-list">
-
                     <div class="bottom-wrapper">
-                        <div class="bottom">北京</div>
+                        <div class="bottom">{{this.$store.state.city}}</div>
                     </div>
-
                 </div>
             </div>
             <div class="area">
-                <div class="title border-topbottom">热门城市</div>
-                <div class="bottom-list">
+                <div class="title border-topbottom" @click="handelCity">热门城市</div>
+                <div class="bottom-list" >
+                    <div class="bottom-wrapper"
+                         v-for="item of hotCity"
+                         :key="item.id"
 
-                    <div class="bottom-wrapper" v-for="item of hotCity" :key="item.id">
-                        <div class="bottom">{{item.name}}</div>
+                    >
+                        <div class="bottom" >{{item.name}}</div>
                     </div>
                 </div>
             </div>
@@ -25,7 +26,7 @@
                 <div class="title border-topbottom">{{key}}</div>
                 <div class="item-list">
                     <div class="item border-bottom"
-                        v-for="innerItem of item"
+                         v-for="innerItem of item"
                          :key="item.id"
                     >
                         {{innerItem.name}}
@@ -44,6 +45,11 @@
             letter:String,
             hotCity:Array,
             cities:Object
+        },
+        methods:{
+          handelCity(address){
+              console.log(address)
+          }
         },
         mounted() {
             //将需要滚动区域的dom元素传入到实例对象当中

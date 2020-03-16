@@ -17,9 +17,8 @@
         height: .98rem;
         background-color: #f6f6f6;
         position: fixed;
-        bottom: 0;
+        bottom: -.02rem;
         left: 0;
         right: 0;
-        box-shadow: 0 -1px 1px rgba(100,100,100,.2);
     }
 </style>

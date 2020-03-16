@@ -15,9 +15,9 @@
                     <div class="bottom-wrapper"
                          v-for="item of hotCity"
                          :key="item.id"
-
+                         @click="handelCity(item.name)"
                     >
-                        <div class="bottom" @click="handelCity(item.name)">{{item.name}}</div>
+                        <div class="bottom">{{item.name}}</div>
                     </div>
                 </div>
             </div>
@@ -50,6 +50,7 @@
           handelCity(address){
               console.log(address)
               this.$store.dispatch('handelCity',address)
+              // this.$router.push('/')
           }
         },
         mounted() {

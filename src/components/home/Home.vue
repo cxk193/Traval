@@ -9,12 +9,12 @@
     </div>
 </template>
 <script>
-    import HomeHeader from "./Header"
-    import HomeSwiper from "./Swiper"
-    import HomeIcon from "./Icon"
-    import HomeRecommend from "./Recommend"
-    import HomeWeekend from './Weekend'
-    import HomeFlooter from './Flooter'
+    import HomeHeader from "./childCommon/Header"
+    import HomeSwiper from "./childCommon/Swiper"
+    import HomeIcon from "./childCommon/Icon"
+    import HomeRecommend from "./childCommon/Recommend"
+    import HomeWeekend from './childCommon/Weekend'
+    import HomeFlooter from './childCommon/Flooter'
 
     export default {
         name:'Home',

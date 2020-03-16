@@ -25,8 +25,8 @@
     </div>
 </template>
 <script>
-    import TabBar from "./TabBar";
-    import TabBarItem from './TabBarItem'
+    import TabBar from "./childCommon/TabBar";
+    import TabBarItem from './childCommon/TabBarItem'
     export default {
         name:'MainTabBar',
         data(){

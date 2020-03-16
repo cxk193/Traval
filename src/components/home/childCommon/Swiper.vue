@@ -27,6 +27,9 @@
                     autoplay: 3000,
                     autoplayDisableOnInteraction : false,
                     loop:true,
+                    //监听到父元素宽度发生改变时自动刷新一次
+                    observeParents:true,
+                    observer:true
                 }
             }
         },

@@ -20,10 +20,10 @@
     </div>
 </template>
 <script>
-    import CityHeader from "./CityHeader";
-    import CitySearch from "./CitySearch";
-    import CityList from "./List";
-    import CityAphabet from './CityAlphabet';
+    import CityHeader from "./childCommon/CityHeader";
+    import CitySearch from "./childCommon/CitySearch";
+    import CityList from "./childCommon/List";
+    import CityAphabet from './childCommon/CityAlphabet';
     const Data = require('../../moke/cities')
 
     export default {

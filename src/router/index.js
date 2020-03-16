@@ -2,10 +2,11 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 const Home = () =>import('../components/home/Home');
-const Piao = () =>import('../views/piao/piao')
-const GoTop = () =>import('../views/goTop/GoTop')
-const Profile = () =>import('../views/profile/profile')
+const Piao = () =>import('../views/piao/piao');
+const GoTop = () =>import('../views/goTop/GoTop');
+const Profile = () =>import('../views/profile/profile');
 const City = () =>import('../components/city/City');
+const Detial = () => import('../components/Detial/Detial')
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,10 @@ const routes = [
   {
     path:'/city',
     component:City
+  },
+  {
+    path:'/detial/:aid',
+    component:Detial
   },
   {
     path:'*',

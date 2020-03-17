@@ -36,6 +36,8 @@
                     {tit:'火车票',ur:require('assets/images/icon/train.png')}
                 ],
                 swiperOption:{
+                    observer:true,
+                    observeParents:true,
                     autoplay:false,
                     loop:false
                 }

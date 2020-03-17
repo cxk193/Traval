@@ -1,5 +1,5 @@
 <template>
-    <div id="home">
+    <div id="home" ref="home">
         <home-header></home-header>
         <home-swiper></home-swiper>
         <home-icon></home-icon>

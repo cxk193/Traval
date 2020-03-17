@@ -10,11 +10,15 @@
                 123
             </div>
         </div>
-        <common-gallay :imgs="imgs" v-if="showimgs"></common-gallay>
+        <FadeAnimation>
+            <common-gallay :imgs="imgs" v-if="showimgs"></common-gallay>
+
+        </FadeAnimation>
     </div>
 </template>
 <script>
     import CommonGallay from '../../../common/gallay/Gallay'
+    import FadeAnimation from "../../../common/fade/FadeAnimation";
     export default {
         name:'DetialBanner',
         data(){
@@ -27,7 +31,8 @@
           }
         },
         components:{
-            CommonGallay
+            CommonGallay,
+            FadeAnimation
         },
         methods:{
             showGallay(){

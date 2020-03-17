@@ -22,7 +22,7 @@
 <script>
     import CityHeader from "./childCommon/CityHeader";
     import CitySearch from "./childCommon/CitySearch";
-    import CityList from "./childCommon/List";
+    import CityList from "./childCommon/CityList";
     import CityAphabet from './childCommon/CityAlphabet';
     const Data = require('../../moke/cities')
 
@@ -45,6 +45,7 @@
         },
         methods:{
             handeLetter(letter){
+
                 this.letter = letter
             },
             getMessage(){
